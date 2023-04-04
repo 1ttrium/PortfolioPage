@@ -1,177 +1,106 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Autumn R | Welcome to my Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width,initial-scale=1">
     
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="manifest" href="site.webmanifest">
-    
+<!-- line 13 media query for mobile, line 235 media query for other -->    
 <style>
-    
-  @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+@media screen and (max-width: 1000px){
+/* elements to remain hidden */
 
-body, html {
-    color: #f7f7f9;
-    min-height: 100vh;
-    min-width: 100vw;    
-    overflow-x: hidden;
-    padding: 0px;
-    position: relative;
-    }
+/**/    
     
-a {
-    color: #ffffff;
-    font-size: 1.5em;
-    line-height: 1.5;
-    text-decoration: none;    
-    }
-    
-body {
-    background: #004242;
-    color: #ffffff;
-    margin: 0;
-    }
-    
+*{
+  margin: 0;
+  padding: 0;
+}
+
 html {
-    margin: 0;
-    }
-    
-#frame {
-    background: #7ecbcb;
-    border-radius: 0 0 50% 50% ;
-    display: block;
-    height: 250px;
-    justify-content: center;
-    margin: 0 auto 308px;
-    padding-top: 85px;
-    text-align: center;
-    width: 300px;
-    }
-
-#frame p {
-    font-family: 'Mrs Saint Delafield', cursive;
-    font-size: 52px;
-    margin: 0 7%; 
-    margin-top: 1vh;
-    z-index: 1;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
-#footer{
-  color: #ffffff;
-  display: inline-grid;
-  font-size: 0.8em;
-  margin: 2vh auto;
-  min-height: 10vh;
+@keyframes biolink{
+  background-color: gray;
+  color: white;
+}
+
+body {
+  background: #004242;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.active, .bio:hover {
+  background: #317d7d;
+  color: white;
+}
+
+.bio {
+/*  animation-name: biolink;
+  animation-duration: 3s; */
+  background: transparent; 
+  border: none;
+  box-shadow: -2px -5px 8px #032121 inset, 2px 5px 12px #20728a inset;
+  color: #fff;
+  cursor: pointer;
+  font-size: initial;
+  outline: none;
+  padding: 0.6em;
+  width: 100%;
+}
+
+.biofull{
+  background: transparent;
+  color: sea-salt;
+  display: none;
+  height: auto;
+/*  max-height: 0;*/
+  overflow: hidden;
+  padding: 3vh 0;
+  top: 3vh;
+  transition: max-height 1s ease-out;
+  z-index: 1;
+}
+
+#bar {
+  background: linear-gradient(to bottom, gray, transparent);
+/*border-radius: 8%;*/
+  border-top: 1px solid gray;
+  display: block;
+  font-size: .6em;
+  margin: 5vh auto 0;
   min-width: 100vw;
-  padding: 5vh 0 3vh;
-  z-index: -1;
+  opacity: 79%;
+  overflow-x: hidden;
+  padding: 1em;
 }
 
-#footer nav {
-    margin: 0 auto;
-    padding: 0.8em 0 0;    
-}
-    
-#footer nav a {
-    background: transparent;
-    font-size: 1.2em;
-    margin: 0;
-    padding: 0 1.3em;
-}
-    
-li {
-    list-style-type: none;
-    }
-    
-#main {
-    background: linear-gradient(to bottom, white, transparent);
-    border: 3px 0 0 0 solid white;
-    bottom: 0px;
-    height: 803px;
-    min-width: 100%;
-    position: relative;
-    }   
-    
-#main > *{
-    justify-content: center;
-    text-align: center;
-    }
-    
-#mainInner {
-    opacity: 94%;
-    }
-    
-p {
-    display: block;
-    margin: 0 auto;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    text-align: center;
-}
-    
-#pane1 {
-    background: linear-gradient(to right, transparent, white);
-   /* border: 3px solid purple; */
-    box-shadow: 3px 3px 15px #0a082e;
-    display: block;
-    font-size: 1.2em;
-    left: 0px;
-    margin-bottom: 20px;
-    height: 469px;
-    justify-content: center;
-    position: absolute;
-    width: 300px;
-}
-    
-#paneInner, #mainInner {
-    background: #004242;    
-    color: white;
-    height: 97%;
-    padding: 2%;
-    text-align: center;
-    width: 95%;
-}    
-    
-#pane2 {
-    background: linear-gradient(to left, transparent, white);
-    box-shadow: 3px 3px 15px #0a082e;
-    display: block;
-    height: 469px;
-    margin-bottom: 20px;
-    right: 0px;
-    position: absolute;
-    top: 0px;
-    width: 300px;
-}
-    
-#product {
-    background: transparent;
-/*    border: 2px solid white;*/
-    display: block;
-    height: fit-content;
-    margin-top: 200px;
-    width: 100%;
-    padding-top: 12vh;
-    position: absolute;
-    text-align: center;
-}
-    
-#productInner {
-    margin: 0 auto;
-    padding:0;
-    text-align: inherit;
+#bar a {
+  color: #f7f7f9;
+  cursor: default;
+  text-decoration: none;
+  padding: 1em;
 }
 
-#samples {
-    border-top: 1px solid #0a082e;
-    border-bottom: 1px solid #0a082e;
+#container {
+  color: #ffffff;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+#examples {
+/*    border-top: 1px solid #0a082e;
+      border-bottom: 1px solid #0a082e;
+*/    
+    border: 1px solid yellow;
     box-shadow: 0px 15px 12px #0a082e;
     display: flex;
     left: 1px;
@@ -179,12 +108,12 @@ p {
     margin: auto;
     overflow-x: scroll;
     overflow-y: hidden;
-    position: absolute;
+    margin-top: 5vh;
     right: 1px;
     text-align: center;
-}
-    
-#samples > div {
+    }
+
+#examples > div {
     background: transparent;
     border: 1px solid black; 
     display: block;
@@ -192,6 +121,68 @@ p {
     height: 244px; 
     min-width: 244px; 
     padding: 50px;
+    }
+
+#footer {
+  color: #ffffff;
+  display: block;
+  font-size: 0.8em;
+  margin: 0 auto;
+  padding: 1vh 0;
+  z-index: 1;
+}
+    
+#footer nav a {
+    color: inherit;
+    cursor: pointer;
+    padding: 0 0.6em;
+    text-decoration: none;
+
+}
+
+#frame{
+  background: #7ecbcb;
+  border-radius: 0 0 50% 50%;
+  color: #ffffff;
+  height: 18vh;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 2vh;
+  width: 25vh;
+  z-index: 1;
+}
+
+#main {
+  background: linear-gradient(to bottom, #ffffff, transparent);
+  display: block;
+  max-height: 95vh;
+}
+
+#mainInner {
+  background: #004242;
+/*border: 1px solid red;*/
+  border-top: 2px solid #ffffff;
+  display: block;
+  margin: 1px auto 0;
+  max-width: 99vw;
+  opacity: 92%;
+}
+
+#samples {
+  background: transparent; 
+  /*border: 2px solid yellow;*/ 
+  display: block; 
+  margin: 0 auto; 
+}
+
+#services {
+  /* border: 1px solid hotpink; */
+  color: inherit;
+  height: fit-content;
+  margin: 5vh auto 0;
+
+  overflow-y: auto;
+  padding: 3vh 1vh;
 }
     
 svg {
@@ -202,17 +193,12 @@ svg {
     z-index: -1;
 }
 
-.tg-wrap {
-    margin: 5vh 25% 0;
-    padding-bottom: 15vh;
-}
-    
 table {
     border: 1px solid #ffffff;
     border-collapse: collapse;
     margin-top: 2vh;
     width: 100%;
-}
+    }
     
 table, thead, tg, td, tr {
   color: #ffffff;
@@ -226,26 +212,10 @@ td, tr {
 
 table h4 {
   padding: 3vh 0 0;
-} 
-    
-ul {
-    justify-content: center;
-    padding: 0 20px ;
 }
-    
-#wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 100vh;
-    width: 100vw;
-}
-    
-</style>
-    
-</head>
 
-<body>
-<!-- TEMPLATES
+    
+/* Template defaults
 
 <div></div>
 <a></a>
@@ -253,97 +223,312 @@ ul {
 
 #f7f7f9 Sea salt
 #41e2ba Turquoise
-#004242 Midnight green
+#004242 Warm Black
 #33202a Dark purple
 #FCA311 Orange
 #3d2012 Bistre
 #0a082e Oxford Blue
 
--->
-<div id="wrapper">    
+*/
+}
+/* ^end of mobile media query */    
+@media screen and (min-width: 1000px) {
+
+    @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
     
-<div id="pane1">
-    <div id="paneInner"><p style="padding-top:3vh;">Hello! I'm a contractor offering user generated content, photography, and copywriting services in the beauty, fashion, and lifestyle spaces.</p> <p>I have been working in paid media space for 5+ years as a content creator to many brands and have a passion for creating digital media to encourage my peers to engage with new brands through gifted campaigns, product launches, and promotional periods on the best performing products in their collections.</p></div>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+@keyframes biolink{
+  background-color: gray;
+  color: white;
+}
+
+body {
+  background: #004242;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.active, .bio:hover {
+  background: #317d7d;
+  color: white;
+}
+
+
+.biofull{
+    background: linear-gradient(to right, transparent, white);
+   /* border: 3px solid purple; */
+    box-shadow: 3px 3px 15px #0a082e;
+    display: block;
+    font-size: 1.2em;
+    height: 469px;
+    justify-content: center;
+    left: 0px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    width: 300px;
+}
+
+#bar {
+    background: linear-gradient(to left, transparent, white);
+    box-shadow: 3px 3px 15px #0a082e;
+    display: block;
+    height: 469px;
+    margin-bottom: 20px;
+    right: 0px;
+    position: absolute;
+    top: 0px;
+    width: 300px;
+}
+
+#bar a {
+  color: #f7f7f9;
+  cursor: default;
+  display: block;
+  text-decoration: none;
+  padding: 1em;
+}
     
-    </div>    
-<div id="frame"><p>Welcome</p></div>
-<div id="pane2">
-<div id="paneInner" style="float: right;">
-    <ul style="padding-top:3vh;"><h3>Contact Me</h3>
-        <li><a href="https://www.fiverr.com/1ttrium" target="_blank">Fiverr</a></li>
-    <li><a href="https://www.instagram.com/1ttrium" target="_blank">Instagram</a></li>
-    <li><a href="https://www.tiktok.com/@1ttrium" target="_blank">Tiktok</a></li>
-    <li><a href="https://www.twitter.com/2ttrium" target="_blank">Twitter</a></li>
-    <li><a href="mailto:1ttrium@gmx.com" target="_blank">Email</a></li>
-    </ul>
+#bar > #paneInner {
+    float: right;
+    }
+
+#container {
+  color: #ffffff;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+#examples {
+/*    border-top: 1px solid #0a082e;
+      border-bottom: 1px solid #0a082e;
+*/    
+    border: 1px solid yellow;
+    box-shadow: 0px 15px 12px #0a082e;
+    display: flex;
+    left: 1px;
+    max-width: 95vw;
+    margin: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 5vh;
+    right: 1px;
+    text-align: center;
+    }
+
+#examples > div {
+    background: transparent;
+    border: 1px solid black; 
+    display: block;
+    margin: 10px 5px;
+    height: 244px; 
+    min-width: 244px; 
+    padding: 50px;
+    }
+
+#footer {
+  color: #ffffff;
+  display: block;
+  font-size: 0.8em;
+  margin: 0 auto;
+  padding: 5vh 0 0;
+  z-index: 1;
+}
+    
+#footer nav a {
+    color: inherit;
+    cursor: pointer;
+    padding: 0 0.6em;
+    text-decoration: none;
+
+}
+
+#frame{
+  background: #7ecbcb;
+  border-radius: 0 0 50% 50%;
+  color: #ffffff;
+  font-size: 3em;
+  height: 45vh;
+  text-align: center;
+  margin: 0 auto 56vh;
+  padding-top: 2vh;
+  width: 50vh;
+  z-index: 1;
+}
+    
+#frame {
+    font-family: 'Mrs Saint Delafield', sans-serif;
+    }
+
+#main {
+  background: linear-gradient(to bottom, #ffffff, transparent);
+  display: block;
+  max-height: 95vh;
+}
+
+#mainInner {
+  background: #004242;
+/*border: 1px solid red;*/
+  border-top: 2px solid #ffffff;
+  display: block;
+  margin: 1px auto 0;
+  max-width: 99vw;
+  opacity: 92%;
+}
+
+#paneInner {
+    background: #004242;    
+    color: white;
+    height: 97%;
+    padding: 2%;
+    text-align: center;
+    width: 95%;
+} 
+    
+#samples {
+  background: transparent; 
+  /*border: 2px solid yellow;*/ 
+  display: block; 
+  margin: 0 auto; 
+}
+
+#services {
+  /* border: 1px solid hotpink; */
+  color: inherit;
+  height: fit-content;
+  margin: 5vh auto 0;
+
+  overflow-y: auto;
+  padding: 3vh 1vh;
+}
+    
+svg {
+    display: flex;
+    margin: 0;
+    opacity: 50%;
+    padding: 0;
+    z-index: -1;
+}
+
+table {
+    border: 1px solid #ffffff;
+    border-collapse: collapse;
+    margin-top: 2vh;
+    width: 100%;
+    }
+    
+table, thead, tg, td, tr {
+  color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+}
+    
+td, tr {
+    border:  1px solid #ffffff;
+    }
+
+table h4 {
+  padding: 3vh 0 0;
+}
+
+
+/*elements hidden for standard devices */
+.bio, .bio *{
+    display: none;
+    }
+
+     
+}
+</style>
+<body>
+ 
+<div id="container">
+<div id="frame"><p style="padding: 3vh 0 0;">Welcome</p></div>
+    <nav id="bar">
+            <div id="paneInner">
+<a href="https://beacons.ai/1ttrium">Contact</a>
+<a href="">Email</a>
+<a href="https://fiverr.com/1ttrium">Fiverr</a>
+<a href="https://instagram.com/1ttrium">Instagram</a>
+<a href="https://pinterest.com/1ttrium">Pinterest</a>
+<a href="https://tiktok.com/@1ttrium">Tiktok</a>
+<a href="https://www.twitter.com/1ttrium">Twitter</a>
+    </div>
+    </nav>
+<div style="height: inherit; top: 30vh; width: 100vw;">
+    <button type="button" class="bio"> <p>Hello ⇲</p></button>
+<div class="biofull">
+    <div id="paneInner">
+<p style="padding: 1rem;">I'm a contractor offering user generated content, photography, and copywriting services in the beauty, fashion, and lifestyle spaces.
+I have been working in paid media space for 5+ years as a content creator to many brands and have a passion for creating digital media to encourage my peers to engage with new brands through gifted campaigns, product launches, and promotional periods on the best performing products in their collections.</p>
     </div>
     </div>
 <div id="main">
-<div id="mainInner" style="/*border: 1px solid red;*/ left: 5px; position: absolute; top: 2px;">
-    <div style="background: #004242; display: block; height: 400px; margin: 0 auto; opacity: 100%;">
-    <h1>Video Samples</h1>
-<div id="samples">
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-<div>6</div>
-<div>7</div>
-<div>8</div>
-<div>9</div>
-    </div>
-</div>
-<div style="background: transparent; display: block; height: 400px; margin: 20vh auto 0 ; opacity: 100%;">
-    <h1>Photo Samples</h1>
-<div id="samples">
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-<div>6</div>
-<div>7</div>
-<div>8</div>
-<div>9</div>
-    </div>
-</div>
-</div>
-    </div>
-    
-
-    
-<div id="product"><h1>My Services </h1>
-    
-<div id="productInner">
-    
-    <table><tr><td><h4>Photo</h4></td></tr>
-        <tr><td>RAW format Photos</td></tr>
-        <tr><td> Social Media Post</td></tr>
-        <tr><td> Carousel Post, max 3 photos/ video</td></tr>
-        <tr><td></td></tr>
-        <tr><td><h4>Video</h4></td></tr>
-        <td>0:15 video</td>
-        <tr><td>0:30 video</td></tr>
-        <tr><td> 1:00 video</td></tr>
-        <tr><td>Unedited product</td></tr>
-        <tr><td><h4>Additional Services</h4></td></tr>
-        <tr><td>Raw Footage</td></tr>
-        <tr><td>AD or Commercial Usage</td></tr>
-        <tr><td>Whitelisting</td></tr>
-        <tr><td>Bundled Services (ask me!)</td></tr>
-        </table>
+  <div id="mainInner">
+    <div id="samples">
+      <div>
+        <div style="/* border: 1px solid green; */ margin: 2vh 0; padding-top: 3vh;">Photo Samples
+          <div id="examples">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+        </div>
+      </div>
+      <div style="/* border: 1px solid green; */ margin: 5vh 0; padding-top: 3vh;">Video Samples
+        <div id="examples">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          </div>
+        </div>
+<div id="services"><h2>Services</h2>  
+<table><tr><td><h4>Photo</h4></td></tr>
+<tr><td>RAW format Photos</td></tr>
+<tr><td> Social Media Post</td></tr>
+<tr><td> Carousel Post, max 3 photos/ video</td></tr>
+<tr><td></td></tr>
+<tr><td><h4>Video</h4></td></tr>
+<td>0:15 video</td>
+<tr><td>0:30 video</td></tr>
+<tr><td> 1:00 video</td></tr>
+<tr><td>Unedited product</td></tr>
+<tr><td><h4>Additional Services</h4></td></tr>
+<tr><td>Raw Footage</td></tr>
+<tr><td>AD or Commercial Usage</td></tr>
+<tr><td>Whitelisting</td></tr>
+<tr><td>Bundled Services (ask me!)</td></tr>
+</table>
 </div> 
-    
-    <div id="footer"><p>This page was made (with love♡) by Autumn</p>
-    <nav>
+      </div>
+    </div>
+<div id="footer">This page was made (with love♡) by Autumn
+        <nav style="padding-top: 1rem;">
         <a href="#">Cookie Notice</a>
         <a href="#">License(s)</a>
-        <a href="#">Privacy Notice</a>
+        <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">Privacy Notice</a>
         <a href="https://www.github.com/" noreferrer target="_blank">Return To GitHub</a>
-        <a href="#">Terms of Use </a>
+        <a href="https://docs.github.com/site-policy/github-terms/github-terms-of-service">Terms of Use</a>
     </nav>
     </div>
+<!-- Begin SVG -->
 <div style="display: flex; min-width: 100vw;"><svg id="svg" height="20vmax" width="100vw" preserveAspectRatio="none" viewBox="0 0 1440 590" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
 .path-0{
 animation:pathAnim-0 4s;
@@ -389,12 +574,67 @@ d: path("M 0,600 C 0,600 0,400 0,400 C 107.76076555023923,364.88038277511964 215
 d: path("M 0,600 C 0,600 0,400 0,400 C 121.13875598086128,386.1531100478469 242.27751196172255,372.3062200956938 330,357 C 417.72248803827745,341.6937799043062 472.02870813397124,324.9282296650718 556,358 C 639.9712918660288,391.0717703349282 753.6076555023923,473.9808612440191 871,466 C 988.3923444976077,458.0191387559809 1109.5406698564593,359.14832535885165 1205,333 C 1300.4593301435407,306.85167464114835 1370.2296650717703,353.42583732057415 1440,400 C 1440,400 1440,600 1440,600 Z");
 }
 }</style><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#7bdcb5"></stop><stop offset="95%" stop-color="#abb8c3"></stop></linearGradient></defs><path d="M 0,600 C 0,600 0,400 0,400 C 121.13875598086128,386.1531100478469 242.27751196172255,372.3062200956938 330,357 C 417.72248803827745,341.6937799043062 472.02870813397124,324.9282296650718 556,358 C 639.9712918660288,391.0717703349282 753.6076555023923,473.9808612440191 871,466 C 988.3923444976077,458.0191387559809 1109.5406698564593,359.14832535885165 1205,333 C 1300.4593301435407,306.85167464114835 1370.2296650717703,353.42583732057415 1440,400 C 1440,400 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg></div>
-    
-</div>
+        </div>
 
-</div>
+    </div>
     
-</div>    
+</div>
+<!-- scripts -->
+<script>
+var hide = document.getElementsByClassName('bio');
+var i;
+
+for (i = 0; i < hide.length; i++) {
+  hide[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var biofull = this.nextElementSibling;
+    if (biofull.style.display === "block"){
+        biofull.style.display = "none";
+    } else {
+      biofull.style.display = "block";
+    }
+  });
+}
+</script>
+<script>
+var show = document.getElementsByClassName("bio");
+//var i;
+
+for (let i = 0; i < show.length; i++) {
+
+show[i].addEventListener("click", function(){
+
+  this.classList.toggle("active");
+  let content = this.nextElementSibling;
+  if (content.style.maxHeight){
+
+    content.style.maxHeight = content.scrollHeight + "px";
+  } else {
+
+    content.style.maxHeight = null;
+  }
+});
+}
+</script>
+    
+<script>
+var show = document.getElementsByClassName("bio");
+var i;
+
+for (i = 0; i < show.length; i++) {
+
+show[i].addEventListener("click", function(){
+
+  this.classList.toggle("active");
+  let content = this.nextElementSibling;
+  if (content.style.maxHeight === content.scrollHeight + "px"){
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+});
+}
+</script>
 </body>
-
+    
 </html>
